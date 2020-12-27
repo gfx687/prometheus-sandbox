@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus-mac.yml:/etc/prometheus/prometheus.yml

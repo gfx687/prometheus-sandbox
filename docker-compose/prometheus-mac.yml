@@ -1,0 +1,13 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+
+  - job_name: 'backend'
+    static_configs:
+      # host.docker.internal is mac's host networks, since we cannot run docker on host network directly as with linux
+      - targets: ['host.docker.internal:8081']
